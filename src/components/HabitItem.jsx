@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 export default class HabitItem extends Component {
-  state = {
-    count: 0,
-  };
-
   handleIncrement = (e) => {
     this.setState({ count: this.state.count + 1 });
   };
@@ -15,10 +11,12 @@ export default class HabitItem extends Component {
   };
 
   render() {
+    const { name, count } = this.props.habit;
+
     return (
       <li>
-        <p className="habit-name">🧘 meditate</p>
-        <strong className="habit-counter">{this.state.count}</strong>
+        <p className="habit-name">{name}</p>
+        <strong className="habit-counter">{count}</strong>
         <button
           className="btn-habit btn-increase"
           onClick={this.handleIncrement}
