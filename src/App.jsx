@@ -1,8 +1,8 @@
 import "./App.css";
-import HabitItem from "./components/HabitItem";
+import HabitList from "./components/HabitList";
 
 function App() {
-  return <HabitItem />;
+  return <HabitList />;
 }
 
 export default App;
