@@ -21,16 +21,16 @@ export default class HabitItem extends Component {
           className="btn-habit btn-increase"
           onClick={this.handleIncrement}
         >
-          <i class="fa-solid fa-plus"></i>
+          <i className="fa-solid fa-plus"></i>
         </button>
         <button
           className="btn-habit btn-decrease"
           onClick={this.handleDecrement}
         >
-          <i class="fa-solid fa-minus"></i>
+          <i className="fa-solid fa-minus"></i>
         </button>
         <button className="btn-habit btn-delete">
-          <i class="fa-solid fa-trash-can"></i>
+          <i className="fa-solid fa-trash-can"></i>
         </button>
       </li>
     );
