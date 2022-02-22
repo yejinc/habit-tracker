@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 
 export default class HabitItem extends Component {
-  handleIncrement = (e) => {
-    this.setState({ count: this.state.count + 1 });
+  handleIncrement = (habitItemInfo) => {
+    this.props.onIncrement(this.props.habitItemInfo);
   };
-
-  handleDecrement = (e) => {
-    const countDecrement = this.state.countDecrement - 1;
-    this.setState({ count: countDecrement < 0 ? 0 : countDecrement });
+  handleDecrement = (habitItemInfo) => {
+    this.props.onDecrement(this.props.habitItemInfo);
+  };
+  handleDelete = (info) => {
+    this.props.onDelete(this.props.habitItemInfo);
   };
 
   render() {
-    const { name, count } = this.props.habit;
+    const { name, count } = this.props.habitItemInfo;
 
     return (
       <li>
@@ -29,7 +30,7 @@ export default class HabitItem extends Component {
         >
           <i className="fa-solid fa-minus"></i>
         </button>
-        <button className="btn-habit btn-delete">
+        <button className="btn-habit btn-delete" onClick={this.handleDelete}>
           <i className="fa-solid fa-trash-can"></i>
         </button>
       </li>
