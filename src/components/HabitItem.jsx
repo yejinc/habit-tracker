@@ -15,24 +15,82 @@ export default class HabitItem extends Component {
     const { name, count } = this.props.habitItemInfo;
 
     return (
-      <li>
-        <p className="habit-name">{name}</p>
-        <strong className="habit-counter">{count}</strong>
-        <button
-          className="btn-habit btn-increase"
-          onClick={this.handleIncrement}
+      <li
+        className="habit-item
+        flex justify-between 
+        grow shrink-0
+        py-4 px-2
+        w-full
+        border-solid border-b-2 border-zinc-800
+        "
+      >
+        <div
+          className="text-group 
+          flex justify-center items-center"
         >
-          <i className="fa-solid fa-plus"></i>
-        </button>
-        <button
-          className="btn-habit btn-decrease"
-          onClick={this.handleDecrement}
+          <p
+            className="habit-name 
+            mr-4
+            font-extralight text-2xl
+          "
+          >
+            {name}
+          </p>
+          <strong
+            className="habit-counter
+            flex 
+            justify-center items-center
+            px-4 py-2 
+            font-light text-md
+            rounded-full
+            text-orange-700 bg-zinc-800"
+          >
+            {count}
+          </strong>
+        </div>
+        <div
+          className="button-group 
+          flex 
+          justify-end items-center
+          gap-2"
         >
-          <i className="fa-solid fa-minus"></i>
-        </button>
-        <button className="btn-habit btn-delete" onClick={this.handleDelete}>
-          <i className="fa-solid fa-trash-can"></i>
-        </button>
+          <button
+            className="btn-habit btn-increase
+            flex
+            justify-center items-center
+            px-4 py-2 
+            font-light text-md 
+            rounded-full 
+            text-zinc-700 bg-zinc-300"
+            onClick={this.handleIncrement}
+          >
+            <i className="fa-solid fa-plus"></i>
+          </button>
+          <button
+            className="btn-habit btn-decrease
+            flex
+            justify-center items-center
+            px-4 py-2
+            font-light text-md 
+            rounded-full 
+            text-zinc-700 bg-zinc-300"
+            onClick={this.handleDecrement}
+          >
+            <i className="fa-solid fa-minus"></i>
+          </button>
+          <button
+            className="btn-habit btn-delete
+            flex  
+            justify-center items-center
+            px-4 py-2 
+            font-light text-md 
+            rounded-full 
+            text-zinc-200 bg-red-600"
+            onClick={this.handleDelete}
+          >
+            <i className="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
       </li>
     );
   }
