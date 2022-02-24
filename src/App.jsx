@@ -33,6 +33,23 @@ export default class App extends Component {
     this.setState({ habitItemInfos });
   };
 
+  handleAdd = (name) => {
+    const habitItemInfos = [
+      ...this.state.habitItemInfos,
+      { id: Date.now(), name, count: 0 },
+    ];
+    this.setState({ habitItemInfos });
+  };
+
+  handleReset = () => {
+    const habitItemInfos = this.state.habitItemInfos.map((habit) => {
+      habit.count = 0;
+      return habit;
+    });
+
+    this.setState(habitItemInfos);
+  };
+
   render() {
     return (
       <div
@@ -56,6 +73,8 @@ export default class App extends Component {
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
           onDelete={this.handleDelete}
+          onAdd={this.handleAdd}
+          onReset={this.handleReset}
         />
       </div>
     );

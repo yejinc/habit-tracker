@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import HabitItem from "./HabitItem";
+import AddForm from "./AddForm";
 
 export default class HabitList extends Component {
   render() {
@@ -15,6 +16,8 @@ export default class HabitList extends Component {
         border-solid border-zinc-800 md:border-l-2"
         action=""
       >
+        <AddForm onAdd={this.props.onAdd} />
+
         <ul
           className="habit-items 
           flex flex-col flex-wrap
