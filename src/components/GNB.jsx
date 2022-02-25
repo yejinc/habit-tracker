@@ -5,17 +5,17 @@ export default class GNB extends Component {
     return (
       <nav
         className="gnb 
-        flex inline-flex md:flex-col
-        justify-between md:justify-start 
-        items-center md:items-end
-        pt-8 pb-10 md:pb-0 
-        md:mr-8
-        w-full md:w-1/4 
-        border-solid border-b-2 md:border-b-0 border-zinc-800"
+        flex inline-flex lg:flex-col
+        justify-between lg:justify-start 
+        items-center lg:items-end
+        pt-8 pb-10 lg:pb-0 
+        lg:mr-8
+        w-full lg:w-1/4 
+        border-solid border-b-2 lg:border-b-0 border-zinc-800"
       >
         <h2
           className="gnb-title 
-          md:mb-8
+          lg:mb-8
           text-4xl text-right"
         >
           habit tracker

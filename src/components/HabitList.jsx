@@ -11,9 +11,9 @@ export default class HabitList extends Component {
         justify-start items-start
         grow shrink-0
         gap-12
-        py-8 md:px-12 
-        w-full  md:w-auto
-        border-solid border-zinc-800 md:border-l-2"
+        py-8 lg:px-12 
+        w-full lg:w-auto
+        border-solid border-zinc-800 lg:border-l-2"
         action=""
       >
         <AddForm onAdd={this.props.onAdd} />
