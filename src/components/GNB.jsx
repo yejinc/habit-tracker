@@ -16,7 +16,7 @@ export default class GNB extends PureComponent {
         <h2
           className="gnb-title 
           lg:mb-8
-          text-4xl text-right"
+          text-4xl sm:text-right"
         >
           habit tracker
         </h2>
