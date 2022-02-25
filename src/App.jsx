@@ -12,24 +12,33 @@ export default class App extends Component {
   };
 
   handleIncrement = (habitItemInfo) => {
-    const habitItemInfos = [...this.state.habitItemInfos];
-    const index = habitItemInfos.indexOf(habitItemInfo);
-    habitItemInfos[index].count++;
+    const habitItemInfos = this.state.habitItemInfos.map((item) => {
+      if (item.id === habitItemInfo.id) {
+        return { ...habitItemInfo, count: habitItemInfo.count + 1 };
+      }
+      return item;
+    });
     this.setState({ habitItemInfos });
   };
 
   handleDecrement = (habitItemInfo) => {
-    const habitItemInfos = [...this.state.habitItemInfos];
-    const index = habitItemInfos.indexOf(habitItemInfo);
-    const count = habitItemInfos[index].count - 1;
-    habitItemInfos[index].count = count < 0 ? 0 : count;
+    const habitItemInfos = this.state.habitItemInfos.map((item) => {
+      if (item.id === habitItemInfo.id) {
+        const count = habitItemInfo.count - 1;
+        return { ...habitItemInfo, count: count < 0 ? 0 : count };
+      }
+      return item;
+    });
     this.setState({ habitItemInfos });
   };
 
   handleDelete = (habitItemInfo) => {
-    const habitItemInfos = this.state.habitItemInfos.filter(
-      (item) => item.id !== habitItemInfo.id
-    );
+    const habitItemInfos = this.state.habitItemInfos.map((item) => {
+      if (item.count !== 0) {
+        return { ...item, count: 0 };
+      }
+      return item;
+    });
     this.setState({ habitItemInfos });
   };
 
@@ -43,7 +52,9 @@ export default class App extends Component {
 
   handleReset = () => {
     const habitItemInfos = this.state.habitItemInfos.map((habit) => {
-      habit.count = 0;
+      if (habit.count !== 0) {
+        return { ...(habit.count = 0) };
+      }
       return habit;
     });
 
