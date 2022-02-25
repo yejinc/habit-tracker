@@ -33,12 +33,9 @@ export default class App extends Component {
   };
 
   handleDelete = (habitItemInfo) => {
-    const habitItemInfos = this.state.habitItemInfos.map((item) => {
-      if (item.count !== 0) {
-        return { ...item, count: 0 };
-      }
-      return item;
-    });
+    const habitItemInfos = this.state.habitItemInfos.filter(
+      (item) => item.id !== habitItemInfo.id
+    );
     this.setState({ habitItemInfos });
   };
 
@@ -51,14 +48,14 @@ export default class App extends Component {
   };
 
   handleReset = () => {
-    const habitItemInfos = this.state.habitItemInfos.map((habit) => {
-      if (habit.count !== 0) {
-        return { ...(habit.count = 0) };
+    const habitItemInfos = this.state.habitItemInfos.map((item) => {
+      if (item.count !== 0) {
+        return { ...item, count: 0 };
       }
-      return habit;
+      return item;
     });
 
-    this.setState(habitItemInfos);
+    this.setState({ habitItemInfos });
   };
 
   render() {
