@@ -64,7 +64,7 @@ export default class HabitItem extends PureComponent {
             text-zinc-700 bg-zinc-300"
             onClick={this.handleIncrement}
           >
-            <i className="fa-solid fa-plus"></i>
+            <i className="fa-solid fa-plus cursor-pointer"></i>
           </button>
           <button
             className="btn-habit btn-decrease
@@ -76,7 +76,7 @@ export default class HabitItem extends PureComponent {
             text-zinc-700 bg-zinc-300"
             onClick={this.handleDecrement}
           >
-            <i className="fa-solid fa-minus"></i>
+            <i className="fa-solid fa-minus cursor-pointer"></i>
           </button>
           <button
             className="btn-habit btn-delete
@@ -85,10 +85,11 @@ export default class HabitItem extends PureComponent {
             px-4 py-2 
             font-light text-md 
             rounded-full 
-            text-zinc-200 bg-red-600"
+            text-zinc-200 bg-red-600
+            "
             onClick={this.handleDelete}
           >
-            <i className="fa-solid fa-trash-can"></i>
+            <i className="fa-solid fa-trash-can cursor-pointer"></i>
           </button>
         </div>
       </li>
