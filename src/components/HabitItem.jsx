@@ -17,21 +17,30 @@ export default class HabitItem extends PureComponent {
     return (
       <li
         className="habit-item
-        flex justify-between 
+        flex flex-col md:flex-row
+        justify-center items-bewteen md:justify-between md:items-start 
+        flex-wrap
+        gap-4 md:gap-0
         grow shrink-0
-        py-4 px-2
+        py-6 px-4
         w-full
         border-solid border-b-2 border-zinc-800
         "
       >
         <div
           className="text-group 
-          flex justify-center items-center"
+          flex justify-start items-center
+          grow
+          w-full md:w-6/12
+          "
         >
           <p
             className="habit-name 
             mr-4
             font-extralight text-2xl
+            w-10/12 md:max-w-full
+            break-words
+            whitespace-normal
           "
           >
             {name}
@@ -51,8 +60,9 @@ export default class HabitItem extends PureComponent {
         <div
           className="button-group 
           flex 
-          justify-end items-center
-          gap-2"
+          justify-end items-start
+          gap-2
+          lg:ml-8"
         >
           <button
             className="btn-habit btn-increase
@@ -61,7 +71,11 @@ export default class HabitItem extends PureComponent {
             px-4 py-2 
             font-light text-md 
             rounded-full 
-            text-zinc-700 bg-zinc-300"
+            text-zinc-700 bg-zinc-300
+            transition duration-250 
+            hover:ease-in-out
+            hover:opacity-40 active:opacity-40
+            "
             onClick={this.handleIncrement}
           >
             <i className="fa-solid fa-plus cursor-pointer"></i>
@@ -73,7 +87,10 @@ export default class HabitItem extends PureComponent {
             px-4 py-2
             font-light text-md 
             rounded-full 
-            text-zinc-700 bg-zinc-300"
+            text-zinc-700 bg-zinc-300
+            transition duration-250 
+            hover:ease-in-out
+            hover:opacity-40 active:opacity-40"
             onClick={this.handleDecrement}
           >
             <i className="fa-solid fa-minus cursor-pointer"></i>
@@ -86,6 +103,9 @@ export default class HabitItem extends PureComponent {
             font-light text-md 
             rounded-full 
             text-zinc-200 bg-red-600
+            transition duration-250 
+            hover:ease-in-out
+            hover:opacity-40 active:opacity-40
             "
             onClick={this.handleDelete}
           >
