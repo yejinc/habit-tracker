@@ -62,6 +62,7 @@ export default class App extends Component {
     return (
       <div
         className="App 
+        box-border m-0
         flex flex-wrap flex-col lg:flex-row
         justify-start items-start
         px-10 lg:px-12
