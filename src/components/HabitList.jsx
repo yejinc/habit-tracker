@@ -51,7 +51,7 @@ export default class HabitList extends Component {
           onClick={this.props.onReset}
         >
           <i
-            class="fa-solid fa-arrow-rotate-right
+            className="fa-solid fa-arrow-rotate-right
           block mr-2"
           ></i>
           reset all
