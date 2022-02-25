@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-export default class AddForm extends Component {
+export default class AddForm extends PureComponent {
   formRef = React.createRef();
   inputRef = React.createRef();
 
