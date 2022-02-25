@@ -23,7 +23,7 @@ export default class HabitList extends Component {
           flex flex-col flex-wrap
           justify-start items-start
           grow shrink-0
-          gap-4
+          
           w-full
           font-light"
         >
@@ -42,19 +42,25 @@ export default class HabitList extends Component {
           className="habit-reset
           flex
           justify-center items-center
-          px-8 py-4
-          font-normal text-sm
+          px-6 pb-1
+          h-14 
+          font-light text-xl md:text-2xl 
           rounded-full
           text-orange-400 
           border-solid border-2 border-orange-400
+          transition duration-250 
+          hover:ease-in-out
+          hover:bg-orange-400 hover:text-zinc-800
           "
           onClick={this.props.onReset}
         >
           <i
             className="fa-solid fa-arrow-rotate-right
-          block mr-2"
+          block 
+          mr-2
+          pt-1"
           ></i>
-          reset all
+          reset all counts
         </button>
       </div>
     );
